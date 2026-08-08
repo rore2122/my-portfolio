@@ -777,6 +777,45 @@
     inset 3px 3px 7px var(--sd-soft),
     inset -3px -3px 7px var(--sl-soft);
   font-size: 24px;
+  overflow: hidden;
+}
+
+.simulation-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.simulation-icon.brand-tata {
+  background: #0F2A5F;
+}
+
+.simulation-icon.brand-goldman {
+  background: #000000;
+}
+
+.simulation-icon.brand-wells {
+  background: #D71E28;
+}
+
+.brand-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.brand-mark.tata-mark {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.brand-mark.gs-mark {
+  font-size: 15px;
+}
+
+.brand-mark.wf-mark {
+  font-size: 13px;
 }
 
 .simulation-year {
@@ -2186,7 +2225,9 @@
       var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
     } catch(e) {}
-  })();<script type="application/ld+json">
+  })();
+  </script>
+<script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
@@ -2196,10 +2237,9 @@
   "description":"Data Analyst specializing in Business Intelligence, AML/KYC Analytics and Artificial Intelligence.",
   "sameAs":[
     "https://github.com/rore2122",
-    "https://www.linkedin.com/in/rohan-sai-pavan2122/",
+    "https://www.linkedin.com/in/rohan-sai-pavan2122/"
   ]
 }
-</script>
 </script>
   
 </head>
@@ -2769,7 +2809,9 @@
     <div class="simulation-card">
 
       <div class="simulation-top">
-        <div class="simulation-icon">🧠</div>
+        <div class="simulation-icon brand-tata">
+          <span class="brand-mark tata-mark">TATA</span>
+        </div>
         <span class="simulation-year">July 2026</span>
       </div>
 
@@ -2807,7 +2849,7 @@
         </span>
 
         <a
-          href="#"
+          href="assets/certificates/tata-group-genai-data-analytics.pdf"
           class="simulation-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -2824,7 +2866,9 @@
     <div class="simulation-card">
 
       <div class="simulation-top">
-        <div class="simulation-icon">💼</div>
+        <div class="simulation-icon brand-goldman">
+          <span class="brand-mark gs-mark">GS</span>
+        </div>
         <span class="simulation-year">July 2026</span>
       </div>
 
@@ -2862,7 +2906,7 @@
         </span>
 
         <a
-          href="#"
+          href="assets/certificates/goldman-sachs-operations.pdf"
           class="simulation-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -2879,7 +2923,9 @@
     <div class="simulation-card">
 
       <div class="simulation-top">
-        <div class="simulation-icon">🏦</div>
+        <div class="simulation-icon brand-wells">
+          <span class="brand-mark wf-mark">WF</span>
+        </div>
         <span class="simulation-year">July 2026</span>
       </div>
 
@@ -2916,7 +2962,7 @@
         </span>
 
         <a
-          href="#"
+          href="assets/certificates/wells-fargo-commercial-banking.pdf"
           class="simulation-link"
           target="_blank"
           rel="noopener noreferrer"
