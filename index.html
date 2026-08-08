@@ -706,7 +706,210 @@
     fill: none;
     stroke-width: 2;
   }
+/* ══════════════════════════════════════════
+   JOB SIMULATIONS
+   ══════════════════════════════════════════ */
 
+.simulations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.simulation-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--porcelain);
+  border-radius: var(--radius-lg);
+  padding: 30px 28px;
+  box-shadow:
+    9px 9px 20px var(--sd),
+    -9px -9px 20px var(--sl);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.simulation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--blue),
+    var(--blue-dim)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.simulation-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    12px 12px 26px var(--sd),
+    -12px -12px 26px var(--sl);
+}
+
+.simulation-card:hover::before {
+  transform: scaleX(1);
+}
+
+.simulation-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.simulation-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--porcelain);
+  box-shadow:
+    inset 3px 3px 7px var(--sd-soft),
+    inset -3px -3px 7px var(--sl-soft);
+  font-size: 24px;
+}
+
+.simulation-year {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simulation-provider {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.simulation-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.simulation-desc {
+  font-size: 13.5px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.simulation-tasks {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.simulation-tasks li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 7px;
+  font-size: 12.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.simulation-tasks li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.simulation-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 24px;
+}
+
+.simulation-skill {
+  font-size: 10.5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: var(--slate);
+  background: var(--porcelain);
+  box-shadow:
+    inset 2px 2px 4px var(--sd-soft),
+    inset -2px -2px 4px var(--sl-soft);
+}
+
+.simulation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.simulation-date {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.simulation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: gap 0.2s ease;
+}
+
+.simulation-link:hover {
+  gap: 9px;
+}
+
+.simulation-link svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .simulations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .simulations-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .simulation-card {
+    padding: 26px 22px;
+  }
+
+  .simulation-title {
+    font-size: 17px;
+  }
+}
   /* CERTIFICATIONS */
   .certs-grid {
     display: grid;
@@ -2024,12 +2227,14 @@
 <nav>
   <a href="#" class="nav-brand">Rohan Sai Pavan</a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#simulations">Job Simulations</a></li>
+  <li><a href="#certifications">Certifications</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
   </ul>
   <div class="nav-actions">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
@@ -2543,6 +2748,197 @@
 </section>
 
 <div class="divider"></div>
+  </section>
+
+<div class="divider"></div>
+
+
+<!-- ══════════════════════════════════════════
+     JOB SIMULATIONS
+     ══════════════════════════════════════════ -->
+
+<section id="simulations">
+
+  <p class="section-label">Industry Experience</p>
+
+  <h2 class="section-title">Job Simulations</h2>
+
+  <div class="simulations-grid">
+
+    <!-- TATA GROUP -->
+    <div class="simulation-card">
+
+      <div class="simulation-top">
+        <div class="simulation-icon">🧠</div>
+        <span class="simulation-year">July 2026</span>
+      </div>
+
+      <p class="simulation-provider">Tata Group · Forage</p>
+
+      <h3 class="simulation-title">
+        GenAI Powered Data Analytics Job Simulation
+      </h3>
+
+      <p class="simulation-desc">
+        Completed a practical data analytics simulation focused on
+        risk profiling, delinquency prediction, business reporting
+        and AI-driven collections strategy.
+      </p>
+
+      <ul class="simulation-tasks">
+        <li>Exploratory data analysis and risk profiling</li>
+        <li>Predicting delinquency with AI</li>
+        <li>Business reporting and data storytelling</li>
+        <li>Implementing an AI-driven collections strategy</li>
+      </ul>
+
+      <div class="simulation-skills">
+        <span class="simulation-skill">EDA</span>
+        <span class="simulation-skill">GenAI</span>
+        <span class="simulation-skill">Risk Analytics</span>
+        <span class="simulation-skill">Predictive Analytics</span>
+        <span class="simulation-skill">Data Storytelling</span>
+      </div>
+
+      <div class="simulation-actions">
+
+        <span class="simulation-date">
+          Completed · July 24, 2026
+        </span>
+
+        <a
+          href="#"
+          class="simulation-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Certificate ↗
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- GOLDMAN SACHS -->
+    <div class="simulation-card">
+
+      <div class="simulation-top">
+        <div class="simulation-icon">💼</div>
+        <span class="simulation-year">July 2026</span>
+      </div>
+
+      <p class="simulation-provider">
+        Goldman Sachs · Forage
+      </p>
+
+      <h3 class="simulation-title">
+        Operations Job Simulation
+      </h3>
+
+      <p class="simulation-desc">
+        Completed a practical operations simulation focused on
+        financial operations and facilitating ultra-high-net-worth
+        transactions.
+      </p>
+
+      <ul class="simulation-tasks">
+        <li>Foundations of operations</li>
+        <li>Facilitating ultra-high-net-worth transactions</li>
+        <li>Applied operational problem-solving</li>
+      </ul>
+
+      <div class="simulation-skills">
+        <span class="simulation-skill">Operations</span>
+        <span class="simulation-skill">Financial Services</span>
+        <span class="simulation-skill">Transactions</span>
+        <span class="simulation-skill">Problem Solving</span>
+      </div>
+
+      <div class="simulation-actions">
+
+        <span class="simulation-date">
+          Completed · July 29, 2026
+        </span>
+
+        <a
+          href="#"
+          class="simulation-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Certificate ↗
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- WELLS FARGO -->
+    <div class="simulation-card">
+
+      <div class="simulation-top">
+        <div class="simulation-icon">🏦</div>
+        <span class="simulation-year">July 2026</span>
+      </div>
+
+      <p class="simulation-provider">
+        Wells Fargo · Forage
+      </p>
+
+      <h3 class="simulation-title">
+        Commercial Banking Job Simulation
+      </h3>
+
+      <p class="simulation-desc">
+        Completed a practical commercial banking simulation focused
+        on client analysis and strategic proposal development.
+      </p>
+
+      <ul class="simulation-tasks">
+        <li>Created a client summary</li>
+        <li>Created a strategic proposal</li>
+        <li>Applied commercial banking concepts</li>
+      </ul>
+
+      <div class="simulation-skills">
+        <span class="simulation-skill">Commercial Banking</span>
+        <span class="simulation-skill">Client Analysis</span>
+        <span class="simulation-skill">Strategic Planning</span>
+        <span class="simulation-skill">Financial Services</span>
+      </div>
+
+      <div class="simulation-actions">
+
+        <span class="simulation-date">
+          Completed · July 30, 2026
+        </span>
+
+        <a
+          href="#"
+          class="simulation-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Certificate ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
 
 <!-- FEATURED SKILLS -->
 <section id="featured-skills" class="featured-skills-section">
